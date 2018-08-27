@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">Investing Articles</h1>
+        </div>
+    </div>
+    {{#each article}}
+    <div class="card articles">
+        <h3 class="card-header text-center">{{headline}}</h3>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="{{image}}" alt="" style="width: 100%">
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-4-card">{{summary}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{URL}}">Full Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="{{_id}}" class="container">
+                <div class="hold-comment-input comment">
+                    <form>
+                        <div class="form-group">
+                            <label for="addAComment">
+                                <h6>Add Comment</h6>
+                            </label>
+                            <textarea class="form-control" id="addAComment" date-article-input="" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary" data-article-id="{{_id}}">View Comments</a>
+                </div>
+                <div id="comments_box" data-id-comments={{_id}}></div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
